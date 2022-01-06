@@ -11,7 +11,6 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.scatter import Scatter
 from kivy.uix.spinner import Spinner
 from kivy.uix.slider import Slider
-
 from kivy.core.window import Window
 from kivy.config import Config
 Config.set('graphics', 'resizable', False)
@@ -267,6 +266,7 @@ class BankApp(App):
             self.pin = '0'
          if int(self.pin) > 200:
             self.pin = str(int(self.pin)-100)
+            self.lbl.text = 'введите сумму\n' + self.pin
          elif 100 < int(self.pin) <= 200:
             self.pin = '100'
             self.lbl.text = 'введите сумму\n' + self.pin
@@ -495,7 +495,6 @@ class BankApp(App):
       self.lbl_r2.text = ''
       self.lbl_r3.text = ''
       self.lbl_r4.text = ''
-
 
 if __name__ == '__main__':
    BankApp().run()
